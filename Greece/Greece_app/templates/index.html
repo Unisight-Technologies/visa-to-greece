@@ -1,0 +1,161 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body_block %}
+
+<!-- ======= Caurosel Section ======= -->
+
+<section id="hero" class="d-flex justify-content-center align-items-center">
+  <div class="container position-relative" data-aos="zoom-in" data-aos-delay="100">
+    <h1>Learning Today,<br>Leading Tomorrow</h1>
+    <h2>We are team of talented designers making websites with Bootstrap</h2>
+    <a href="#" class="btn-get-started">Get Started</a>
+  </div>
+</section>
+
+<!-- Caurosel Section -->
+
+  <main id="main">
+    <!-- ======= Services Section ======= -->
+    <section class="services">
+      <div style="text-align: center; text-decoration: solid; padding-bottom: 30px;">
+        <h2><b>Visa Services</b></h2>
+      </div>
+      <div class="container">
+
+        <div class="row">
+          <!-- <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up"> -->
+            <div class="col-md-4 col-sm-4">
+            	<div class="wrimagecard wrimagecard-topimage" data-aos="fade-up" data-aos-delay="100">
+                  <a href="{% url 'studentvisa' %}" class="wrimagecard-topimage">
+                    <div class="wrimagecard-topimage_header" style="text-align: center">
+                      <i class="bx bx-book-reader"></i>
+                    </div>
+                    <div class="wrimagecard-topimage_title" style="text-align: center;">
+                       <h4>Student VISA</h4>
+                    </div>
+                  </a>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-4">
+            	<div class="wrimagecard wrimagecard-topimage" data-aos="fade-up" data-aos-delay="100">
+                <a href="{% url 'workvisa' %}" class="wrimagecard-topimage">
+                    <div class="wrimagecard-topimage_header" style="text-align: center">
+                      <i class="bx bx-briefcase"></i>
+                    </div>
+                    <div class="wrimagecard-topimage_title" style="text-align: center;">
+                       <h4>Work VISA</h4>
+                    </div>
+                  </a>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-4">
+            	<div class="wrimagecard wrimagecard-topimage" data-aos="fade-up" data-aos-delay="100">
+                <a href="{% url 'golden_visa' %}" class="wrimagecard-topimage">
+                    <div class="wrimagecard-topimage_header" style="text-align: center">
+                      <i class="bx bx-euro"></i>
+                    </div>
+                    <div class="wrimagecard-topimage_title" style="text-align: center;">
+                       <h4>Golden VISA</h4>
+                    </div>
+                  </a>
+                </div>
+            </div>
+
+           
+
+        </div>
+
+      </div>
+    </section>
+    <!-- End Services Section -->
+
+     <!-- ======= F.A.Q Section ======= -->
+     <section id="faq" class="faq">
+      <div class="container">
+
+        <div class="section-title" data-aos="zoom-out">
+          <h2></h2>
+          <p>About Greece</p>
+        </div>
+
+        <ul class="faq-list">
+
+          <li>
+            <div data-bs-toggle="collapse" class="collapsed question" href="#faq1"> Capital City <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
+            <div id="faq1" class="collapse" data-bs-parent=".faq-list">
+              <p>
+                Athens
+              </p>
+            </div>
+          </li>
+
+          <li>
+            <div data-bs-toggle="collapse" href="#faq2" class="collapsed question"> Language <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
+            <div id="faq2" class="collapse" data-bs-parent=".faq-list">
+              <p>
+                Greek
+              </p>
+            </div>
+          </li>
+
+          <li>
+            <div data-bs-toggle="collapse" href="#faq3" class="collapsed question">Government <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
+            <div id="faq3" class="collapse" data-bs-parent=".faq-list">
+              <p>
+                Unitary parliamentary constitutional republic
+              </p>
+            </div>
+          </li>
+
+          <li>
+            <div data-bs-toggle="collapse" href="#faq4" class="collapsed question">Area<i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
+            <div id="faq4" class="collapse" data-bs-parent=".faq-list">
+              <p>
+                50,949 square miles / 131,957 square kilometer
+              </p>
+            </div>
+          </li>
+
+          <li>
+            <div data-bs-toggle="collapse" href="#faq5" class="collapsed question">Population<i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
+            <div id="faq5" class="collapse" data-bs-parent=".faq-list">
+              <p>
+                10.9 million
+              </p>
+            </div>
+          </li>
+
+          <li>
+            <div data-bs-toggle="collapse" href="#faq6" class="collapsed question">Currency<i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
+            <div id="faq6" class="collapse" data-bs-parent=".faq-list">
+              <p>
+                Euro
+              </p>
+            </div>
+          </li>
+
+          <li>
+            <div data-bs-toggle="collapse" href="#faq7" class="collapsed question">Calling code<i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
+            <div id="faq7" class="collapse" data-bs-parent=".faq-list">
+              <p> 
+                +30
+              </p>
+            </div> 
+     
+
+          </li>
+
+        </ul>
+
+      </div>
+    </section>
+    
+    <!-- End F.A.Q Section -->
+
+    </main>
+
+    {% endblock %}
+
+    
