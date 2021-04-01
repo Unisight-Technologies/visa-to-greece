@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body_block %}
+
+<main id="main">
+
+<section id="blogs">
+<div class="section-title">
+  <span style="color: black;">Breaking News</span>
+
+</div>
+  <div class="container">
+
+    {% for article in all_news %}
+          <div class="">
+            <div class="row" data-aos="fade-up">
+
+            <div class="col">
+              <a href="#"><h3 class="blog-head">{{ article.title }}</h3></a>
+              
+
+              <p class="blog-para">{{ article.description }}</p>
+              <br /><br />
+
+
+
+          </div>
+
+          </div>
+    {% endfor %}
+  </div>
+</section>
+
+
+</main>
+
+{% endblock %}

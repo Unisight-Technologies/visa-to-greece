@@ -5,6 +5,8 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from django.contrib import messages
 from django.views.decorators.csrf import csrf_exempt
+from . import mailHandler
+from . import models
 
 # Create your views here.
 class Homepage(TemplateView):
@@ -34,29 +36,27 @@ class Workvisapage(TemplateView):
 class Goldenvisapage(TemplateView):
     template_name= "golden_visa.html"
 
-class Contactpage(TemplateView):
-    template_name= "contactus.html"
-    def post(self, request):
+class Givingitback(TemplateView):
+    template_name= "givingItBack.html"
 
-        form = request.POST
-        name = form.get('name')
-        email = form.get('email')
-        phone = form.get('phone')
-        subject = form.get('subject')
-        message = form.get('message')
+class Contactpage(View):
+    def get(self, request, *args, **kwargs):
+        return render(request,"contactus.html")
+    
+    def post(self, request, *args, **kwargs):
+        data=request.POST
+        mailHandler.sendMailToUser(data.get('name'), data.get('email'))
+        mailHandler.sendMailToVisaToGreece(data.get('name'), data.get('email'), data.get('phone'), data.get('subject'),data.get('message'))
+        print(request.POST)
+        return redirect("index")
 
-        new_contact = models.Contact.objects.create(
-            name=name,
-            email=email,
-            phone=phone,
-            subject=subject,
-            message=message
+class News(View):
+    def get(self, request, *args, **kwargs):
+        news=models.News.objects.all()
+        context={
+        "all_news":news,
+        "info":"mydata",
+        }
+        print(news)
 
-        )
-        new_contact.save()
-        mailHandler.sendMailToUser(name, email)
-        mailHandler.sendMailToVisaToCanada(name, email, phone, subject, message)
-        messages.success(request, "Your query has been successfully submitted. We will get back to you soon.")
-        return redirect("contactus")
-
-
+        return render(request, "news.html",context=context)
