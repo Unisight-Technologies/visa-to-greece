@@ -25,7 +25,10 @@ TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = '5m1#3&v6!hjmnny6#%rs4s5zc7f#1ape_r-*xddc9eul4ooxao'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+if(socket.gethostname() == 'DESKTOP-CDJ0JAR'):
+    DEBUG = True
+else:
+    DEBUG = False
 
 ALLOWED_HOSTS = ['www.visatogreece.com','visatogreece.com','127.0.0.1']
 
