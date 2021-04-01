@@ -25,9 +25,9 @@ TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = '5m1#3&v6!hjmnny6#%rs4s5zc7f#1ape_r-*xddc9eul4ooxao'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['www.visatogreece.com','visatogreece.com','127.0.0.1']
 
 
 # Application definition
@@ -121,3 +121,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# Make sure that BASE_DIR is defined somewhere at the top
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
