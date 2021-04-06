@@ -127,3 +127,34 @@
   });
 
 })()
+
+// Toggle .header-scrolled class to #header when page is scrolled
+$(window).scroll(function() {
+  if ($(this).scrollTop() > 100) {
+    $('#header').addClass('header-scrolled');
+    $('#topbar').addClass('topbar-scrolled');
+    document.getElementById("header").style.padding = "15px 0px";
+  } 
+  else {
+    $('#header').removeClass('header-scrolled');
+    $('#topbar').removeClass('topbar-scrolled');
+    const mediaQuery = window.matchMedia('(max-width: 600px)')
+    if (mediaQuery.matches) {
+      document.getElementById("header").style.padding = "15px 0px";
+    }
+    else{
+    document.getElementById("header").style.padding = "43px 0px 15px";
+    }
+  }
+});
+
+if ($(window).scrollTop() > 100) {
+  $('#header').addClass('header-scrolled');
+  $('#topbar').addClass('topbar-scrolled');
+  if (mediaQuery.matches) {
+    document.getElementById("header").style.padding = "15px 0px";
+  }
+  else{
+  document.getElementById("header").style.padding = "43px 0px 15px";
+  }
+}
