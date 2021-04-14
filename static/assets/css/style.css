@@ -30,7 +30,7 @@ h1, h2, h3, h4, h5, h6 {
 #whyus{
   width: 60%;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 600px){
   #whyus{
     width: 100%;
   }
