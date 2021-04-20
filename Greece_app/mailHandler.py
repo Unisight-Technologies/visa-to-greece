@@ -10,7 +10,7 @@ environ.Env.read_env()
 
 def sendMailToUser(name, send_to):
     subject = "Thanks for contacting us"
-    message = "Hello "+name+"! \n\nWe have successfully received your message.\n\nWe will get back to you as soon as possible.\n\nRegards\n- Visa To Greece."
+    message = "Hello "+ name +"! <br><br>We have successfully received your message.<br><br>We will get back to you as soon as possible.<br><br>Regards<br>- Visa To Greece."
     msg = Mail(
         from_email='unisighttechnologies@gmail.com',
         to_emails=send_to,
@@ -27,11 +27,11 @@ def sendMailToUser(name, send_to):
 
 
 def sendMailToVisaToGreece(name, email, phone, subject, message):
-    message = "A new message has been received on our website:\n\nName: "+name+"\nEmail Id: "+email+"\nPhone: "+phone+"\nSubject: "+subject+"\nMessage: "+message+"\n\n\nRegards"
+    message = "A new message has been received on our website:<br><br>Name: "+name+"<br>Email Id: "+email+"<br>Phone: "+phone+"<br>Subject: "+subject+"<br>Message: "+message+"<br><br><br>Regards"
     subject = "A message has been received on Visa to Greece."
     msg = Mail(
         from_email='unisighttechnologies@gmail.com',
-        to_emails='adityadatar2001@gmail.com',
+        to_emails='info@visatogreece.com',
         subject=subject,
         html_content=message
     )

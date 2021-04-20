@@ -2,6 +2,7 @@
 {% load static %}
 {% block body_block %}
 
+<main id="main">
 <style>
   .sub_button{
     background: #0d5eaf;
@@ -15,6 +16,9 @@
     background: #3ac162;
   }
 </style>
+<!-- Captcha -->
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
 <div class="section-title" data-aos="zoom-out" style="text-align: center; padding-top: 100px;">
   <p>Contact</p>
 </div>
@@ -37,7 +41,8 @@
         <div class="info-box  mb-4">
           <i class="bx bx-envelope"></i>
           <h3>Email Us</h3>
-          <p>coming soon</p>
+          <a href="mailto:info@visatogreece.com">
+          <p>info@visatogreece.com</p></a>
         </div>
       </div>
 
@@ -77,14 +82,40 @@
           <div class="form-group mt-3">
             <textarea class="form-control" name="message" rows="5" placeholder="Message"  ></textarea>
           </div>
-          <br /><br />
+          <div class="form-group mt-3">
+            <!-- alert-messages for captcha -->
+              <div class="row login" style="    width: 100%;
+              text-align: center;
+              " class="row">
+              {% if messages %}
+              {% for message in messages %}
+              {% if message.tags == 'info' %}
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                  {% else %}
+                  <div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert"></div>
+                  {% endif %}
+              {{ message }}
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close" style="background: transparent; border: 1px solid black;">
+                <span aria-hidden="true">&times;</span>
+              </button>
+              </div>
+              {% endfor %}
+              {% endif %}
+              </div>
+            <!-- alert-messages-ends -->
+  </div>
+          <p></p>
           <!-- <div class="my-3">
             <div class="loading">Loading</div>
             <div class="error-message"></div>
             <div class="sent-message">Your message has been sent. Thank you!</div>
           </div> -->
-
-          <div class="text-center"><button type="submit" class = "sub_button">Send Message</button></div>
+          <div class="form-group mt-3">
+            <div class="g-recaptcha" data-sitekey="{{SITE_KEY}}"></div>
+          </div>
+        </br>
+          <div class="text-center"><input 
+            class="sub_button" value="Send Message" type="submit"></div>
         </form>
       </div>
 
@@ -131,5 +162,5 @@
 <script src="https://cdn.amcharts.com/lib/4/themes/kelly.js"></script>
 <script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
 <script src="{% static 'assets/js/map.js' %}"></script>
-
+</main>
 {% endblock %}
